@@ -1,4 +1,4 @@
-package com.yr.socket;
+package com.yr.socketTcp;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -25,7 +25,7 @@ public class SocketServer {
 				// 接收从客户端输入的信息
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
 				String mass = br.readLine();// 读取一行
-				System.out.println(">>Client:" + mass + "\n");// 打印
+				System.out.println("客户端发送的消息:" + mass + "\n");// 打印
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
