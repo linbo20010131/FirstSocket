@@ -18,14 +18,20 @@ public class SocketServer {
 		Socket socket = null;
 		BufferedReader br = null;
 		try {
-			serverSocket = new ServerSocket(15222);// 创建端口为15222的serverSocket
-			socket = serverSocket.accept();// 监听客户端,监听过程中处于阻塞状态,直到客户端连接
-			System.out.println("客户端" + socket.getInetAddress() + "连接成功");// 得到客户端的ip
-			while (true) {// 循环接收
+			// 创建端口为15222的serverSocket
+			serverSocket = new ServerSocket(15222);
+			// 监听客户端,监听过程中处于阻塞状态,直到客户端连接
+			socket = serverSocket.accept();
+			// 得到客户端的ip
+			System.out.println("客户端" + socket.getInetAddress() + "连接成功");
+			// 循环接收
+			while (true) {
 				// 接收从客户端输入的信息
 				br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-				String mass = br.readLine();// 读取一行
-				System.out.println("客户端发送的消息:" + mass + "\n");// 打印
+				// 读取一行
+				String mass = br.readLine();
+				// 打印
+				System.out.println("客户端发送的消息:" + mass + "\n");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
