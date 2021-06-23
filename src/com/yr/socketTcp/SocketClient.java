@@ -22,7 +22,7 @@ public class SocketClient {
 		BufferedWriter bw = null;
 		try {
 			// 创建客户端Socket,指定服务器地址和端口,端口必须和服务端一致
-			socket = new Socket("192.168.1.55", 15222);
+			socket = new Socket("localhost", 15222);
 			// 设值超时时间,如果过了这个时间,自动关闭连接
 			socket.setSoTimeout(10000);
 			// 由系统输入并构造BufferedReader对象
